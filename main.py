@@ -1,6 +1,6 @@
 import streamlit as st
 from prediction_helper import predict 
-st.set_page_config(page_title="Lauki Finance: Credit Risk Modelling", page_icon="📊")
+st.set_page_config(page_title="Credit Risk Modelling")
 st.title("Credit Risk Modelling")
 
 row1 = st.columns(3)
@@ -19,7 +19,7 @@ with row1[2]:
 loan_to_income_ratio = loan_amount / income if income > 0 else 0
 with row2[0]:
     st.text("Loan to Income Ratio:")
-    st.text(f"{loan_to_income_ratio:.2f}")  # Display as a text field
+    st.text(f"{loan_to_income_ratio:.2f}")  
 
 
 with row2[1]:
@@ -51,5 +51,6 @@ if st.button('Calculate Risk'):
     st.write(f"Deafult Probability: {probability:.2%}")
     st.write(f"Credit Score: {credit_score}")
     st.write(f"Rating: {rating}")
+
 
 
